@@ -12,6 +12,8 @@ trinomial_set = read_csv('aa_trinomials.csv')
 
 #make a subset with no NA number of Utah trinomials.
 
+#to be added...
+
 
 
 
