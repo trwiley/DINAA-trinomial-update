@@ -4,7 +4,8 @@
 
 trinomials <- read.csv("aa_trinomials.csv")
 
-trinomialscleaned <- subset(trinomials$'Trinomial Instance')
+trinomials[grep("ML"), trinomials$Trinomial.Instance]
+
 
 
 
