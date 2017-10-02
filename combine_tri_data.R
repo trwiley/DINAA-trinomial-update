@@ -37,6 +37,8 @@ attach(split.set)
   avoid = Avoid..H.M.L.
 ))
 
+# Add full combined trinomial back to the data set.
+
 tri_data_split$fulltri <- paste(st, ct, site, sep="")
 
 detach(original.set)

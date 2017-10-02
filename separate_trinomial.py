@@ -9,32 +9,38 @@ import csv
 #grab command line arg
 filename = sys.argv[1]
 
-#open and read the file
+#open and read the file in as a list object.
 file_object = open(filename, 'r')
 
 with file_object as f:
     trinom_list = file_object.readlines()
 
+#strip out pesky new lines
 trinom_list = [i.strip() for i in trinom_list]
 
+# These lists are where state numbers, county codes, and site numbers are stored.
 stateList = []
 countylist = []
 sitelist = []
 
 for i in range(0, len(trinom_list)):
-    # grap all of the characters per line that are basically not whitespace.
+    # grab all of the characters per line that actually contain trinomial data.
+    # temporary string variable to store the trinomial.
     tempstr = ""
     for j in range(0, len(trinom_list[i])):
         if trinom_list[i][j].isalpha() or trinom_list[i][j].isdigit():
             tempstr += trinom_list[i][j]
     
+    # temporary variable to store a trinomialsplit object
     tempts = ts.TrinomialSplit(tempstr)
-    #print(trinom_list[i])
+    
+    #Add the trinomial elements to their respective lists.
     stateList.append(tempts.statenumber)
     countylist.append(tempts.countycode)
     sitelist.append(tempts.sitenumber)
 
 
+# Write the lists to one CSV file.
 with open('separate_tri.csv', 'w') as f:
     writer = csv.writer(f, delimiter=',')
     headerrow = "state,county,row".split(",")
