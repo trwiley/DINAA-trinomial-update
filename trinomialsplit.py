@@ -161,7 +161,7 @@ class TrinomialSplit:
     def is_lowercase(self):
         for i in range(0, len(self.trinomial)):
             if self.trinomial[i].isalpha():
-                if self.trinomial.islower():
+                if self.trinomial[i].islower():
                     return True
 
         return False

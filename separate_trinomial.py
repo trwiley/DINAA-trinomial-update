@@ -17,8 +17,10 @@ with file_object as f:
 trinom_list = [i.strip() for i in trinom_list]
 
 stateList = []
+countylist = []
+sitelist = []
 
-for i in range(0, len(trinom_list) - 1):
+for i in range(0, len(trinom_list)):
     # grap all of the characters per line that are basically not whitespace.
     tempstr = ""
     for j in range(0, len(trinom_list[i])):
@@ -27,9 +29,10 @@ for i in range(0, len(trinom_list) - 1):
     
     tempts = ts.TrinomialSplit(tempstr)
     #print(trinom_list[i])
-    stateList.append(tempts.get_state_code)
+    stateList.append(tempts.statenumber)
+    countylist.append(tempts.countycode)
+    sitelist.append(tempts.sitenumber)
 
-print(stateList)
 
 
 
