@@ -42,3 +42,4 @@ with open('separate_tri.csv', 'w') as f:
     for i in range(0, len(trinom_list)):
         writestring = (str(stateList[i]) + "," + str(countylist[i]) + "," + str(sitelist[i])).split(",")
         writer.writerow(writestring)
+        
