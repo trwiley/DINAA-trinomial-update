@@ -10,3 +10,5 @@ Python and R scripts  written to perform some cleaning work on a dataset of Smit
 columns.
 * combine_tri_data uses the two CSV's and essentially combines them.
 
+While I tried to make these scripts somewhat generic, they will have to be modified depending on the nature of the original data file (i.e: what the column names are)
+
