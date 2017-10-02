@@ -4,6 +4,7 @@
 
 import sys #for command line args.
 import trinomialsplit as ts
+import csv
 
 #grab command line arg
 filename = sys.argv[1]
@@ -32,6 +33,15 @@ for i in range(0, len(trinom_list)):
     stateList.append(tempts.statenumber)
     countylist.append(tempts.countycode)
     sitelist.append(tempts.sitenumber)
+
+
+with open('separate_tri.csv', 'w') as f:
+    writer = csv.writer(f, delimiter=',')
+    headerrow = "state,county,row".split(",")
+    writer.writerow(headerrow)
+    for i in range(0, len(trinom_list)):
+        writestring = (str(stateList[i]) + "," + str(countylist[i]) + "," + str(sitelist[i])).split(",")
+        writer.writerow(writestring)
 
 
 
