@@ -10,6 +10,8 @@ args <- commandArgs(TRUE)
 
 filename = as.character(args[1])
 
+# Read in the CSV.
+
 trinomial.set <- read.csv(filename)
 
 trinom.vec <- as.character(trinomial.set$`Trinomial.Instance`)
