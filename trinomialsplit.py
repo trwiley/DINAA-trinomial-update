@@ -32,10 +32,11 @@ class TrinomialSplit:
         return False
 
     def has_state_no(self):
-        if self.trinomial[0].isdigit():
-            return True
-        else:
+        if self.statenumber == "00":
             return False
+        else:
+            return True
+
 
     # strip dashes or spaces
     def strip_dashes(self):
