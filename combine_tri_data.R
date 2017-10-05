@@ -27,6 +27,7 @@ attach(split.set)
   issuenum = Issue.Number,
   pagenum = Page.Number,
   primauth = Primary.Author.s.Last.Name,
+  tri_instance = Trinomial.Instance,
   st = state,
   ct = county,
   site = row,
@@ -38,10 +39,14 @@ attach(split.set)
 ))
 
 # Add full combined trinomial back to the data set.
+attach(tri_data_split)
 
 tri_data_split$fulltri <- paste(st, ct, site, sep="")
 
+detach(tri_data_split)
+
 detach(original.set)
+
 detach(split.set)
 
 # filter out site codes that take the format of ST's but are in fact not.
